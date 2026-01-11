@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraGen v18.5 | Spécifications Techniques</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050507;
+            --panel: #111218;
+            --accent: #00f2ff;
+            --text-main: #ffffff;
+            --text-dim: #9494a3;
+            --border: #22232b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; }
+
+        .glow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 50% -10%, #16163d 0%, transparent 40%); z-index: -1; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(5, 5, 7, 0.9); backdrop-filter: blur(20px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+        .logo { font-size: 1.5rem; font-weight: 800; }
+        .logo span { color: var(--accent); }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+        header { padding: 80px 0 40px; text-align: center; }
+        h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 20px; }
+        h1 span { color: var(--accent); }
+
+        /* Section Descriptions Détaillées */
+        .spec-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin: 60px 0; }
+        .spec-item { background: var(--panel); border: 1px solid var(--border); padding: 40px; border-radius: 24px; transition: 0.3s; }
+        .spec-item:hover { border-color: var(--accent); transform: translateY(-5px); }
+        
+        .spec-item h2 { font-size: 2rem; color: var(--accent); margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        .spec-item h3 { color: #fff; margin: 25px 0 10px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
+        .spec-item p { color: var(--text-dim); margin-bottom: 15px; font-size: 1.05rem; }
+        .spec-item ul { list-style: none; color: var(--text-dim); }
+        .spec-item ul li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .spec-item ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+        .btn { padding: 16px 35px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; cursor: pointer; border: none; }
+        .btn-main { background: var(--accent); color: #000; }
+        .btn-main:hover { box-shadow: 0 0 30px rgba(0, 242, 255, 0.4); }
+
+        /* Nouveau Système de Commentaire Simple */
+        .comment-section { margin-top: 60px; padding: 40px; background: #000; border-radius: 24px; border: 1px solid var(--border); }
+        textarea { width: 100%; padding: 20px; background: var(--panel); border: 1px solid var(--border); border-radius: 12px; color: white; margin-bottom: 20px; resize: none; }
+
+        footer { text-align: center; padding: 60px; color: var(--text-dim); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    
+    <nav>
+        <div class="logo">AURA<span>GEN</span></div>
+        <a href="https://discord.com/oauth2/authorize?client_id=1459610579395154050&permissions=8&integration_type=0&scope=bot" class="btn btn-main" style="padding: 10px 20px;">Inviter le Bot</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Spécifications <span>AuraGen Nexus</span></h1>
+            <p style="color: var(--text-dim); font-size: 1.2rem;">Analyse profonde de l'infrastructure v16.2 "Elite-Structure".</p>
+        </header>
+
+        <div class="spec-grid">
+            <div class="spec-item">
+                <h2><i class="fas fa-sitemap"></i> Architecture Phoenix (Reconstruction)</h2>
+                <p>Le système Phoenix est un moteur de déploiement asynchrone conçu pour restructurer un serveur Discord en un temps record sans subir les limitations de latence habituelles.</p>
+                
+                <h3>Infrastructure des Salons</h3>
+                <ul>
+                    <li><strong>14 Catégories Stratégiques :</strong> Organisation logique par secteurs (Accueil, Gaming, E-Sport, Staff, Archives, etc.).</li>
+                    <li><strong>60 Salons Pré-configurés :</strong> Chaque salon possède un type (Texte/Vocal) et une utilité précise (News, Casino, Logs, Tickets).</li>
+                    <li><strong>Permissions Granulaires :</strong> Configuration automatique des accès Staff (Salons cachés) et membres.</li>
+                </ul>
+
+                <h3>Hiérarchie des Rôles</h3>
+                <ul>
+                    <li><strong>12 Rôles Fonctionnels :</strong> Suppression des rôles "niveaux" inutiles pour une gestion par responsabilités (Fondateur, Admin, Modérateur, Helper, Membre).</li>
+                    <li><strong>Système de Couleurs :</strong> Code couleur optimisé pour la lisibilité de la liste des membres (Hoisted).</li>
+                </ul>
+            </div>
+
+            <div class="spec-item">
+                <h2><i class="fas fa-brain"></i> Nexus IA (Intelligence Artificielle)</h2>
+                <p>AuraGen intègre un module d'intelligence artificielle multimodale accessible directement par mention ou via commandes spécifiques.</p>
+                
+                <h3>Traitement de Langage Naturel</h3>
+                <ul>
+                    <li><strong>Nexus Chat :</strong> Réponse instantanée aux questions complexes grâce à l'intégration des derniers modèles de langage.</li>
+                    <li><strong>Mémoire de Contexte :</strong> Capacité à suivre une conversation fluide sans perdre le fil du sujet.</li>
+                </ul>
+
+                <h3>Génération Visuelle</h3>
+                <ul>
+                    <li><strong>Aura Art :</strong> Moteur de génération d'images HD intégré. Le bot interprète vos descriptions textuelles pour créer des visuels uniques en 5 secondes.</li>
+                    <li><strong>Styles Variés :</strong> Support du photoréalisme, de l'art numérique, du style anime et du design 3D.</li>
+                </ul>
+            </div>
+
+            <div class="spec-item">
+                <h2><i class="fas fa-user-shield"></i> Titan Shield (Sécurité)</h2>
+                <p>Le module Titan Shield est une suite d'outils de protection active agissant comme un pare-feu pour votre communauté.</p>
+                
+                <h3>Protection Anti-Raid</h3>
+                <ul>
+                    <li><strong>Détection Comportementale :</strong> Identification des vagues de bots et du spam massif en moins de 300ms.</li>
+                    <li><strong>Mute Automatique :</strong> Isolation immédiate des comptes suspects via le rôle "Muet" pré-configuré.</li>
+                </ul>
+
+                <h3>Audit & Traçabilité</h3>
+                <ul>
+                    <li><strong>Logs Avancés :</strong> Enregistrement complet de chaque action (suppressions, modifications, arrivées) dans le salon <code>📑┃logs</code>.</li>
+                    <li><strong>Outils de Modération :</strong> Commandes <code>!ban</code>, <code>!kick</code> et <code>!clean</code> optimisées pour la sécurité.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="comment-section">
+            <h2 style="margin-bottom: 20px;">Laissez un avis sur l'infrastructure</h2>
+            <textarea id="user-input" placeholder="Partagez votre avis sur les performances d'AuraGen..."></textarea>
+            <button class="btn btn-main" onclick="addComment()">Publier mon avis</button>
+            <div id="comment-list" style="margin-top: 30px;"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 AuraGen Nexus Technology | L'Elite de l'Automatisme.</p>
+    </footer>
+
+    <script>
+        function addComment() {
+            const input = document.getElementById('user-input');
+            const list = document.getElementById('comment-list');
+            if(input.value.trim() !== "") {
+                const div = document.createElement('div');
+                div.style.background = "#111218";
+                div.style.padding = "20px";
+                div.style.borderRadius = "12px";
+                div.style.marginBottom = "15px";
+                div.style.borderLeft = "4px solid #00f2ff";
+                div.innerHTML = `<strong style="color: #00f2ff; display: block; margin-bottom: 5px;">@Visiteur</strong><p>${input.value}</p>`;
+                list.prepend(div);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
